@@ -58,11 +58,17 @@
 
         function Text({
             as = 'span',
+            variant = 'default',
+            className,
             children,
-            ...props }) {
+            ...props
+        }) {
             return React.createElement(
                 as,
-                props,
+                {
+                    className: `${textVariants[variant]} ${className}`,
+                    ...props
+                },
                 children
             )
         }
